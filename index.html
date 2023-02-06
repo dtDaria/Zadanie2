@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Заметки</title>
+</head>
+<body>
+<div id="app">
+    <a href="#openModal">Сделать заметки</a>
+    <div id="openModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Заметка</h3>
+                    <li><a href="#close" title="Close" class="close">×</a></li>
+                </div>
+                <div class="modal-body">
+                    <product-review></product-review>
+                </div>
+            </div>
+        </div>
+    </div>
+    <product></product>
+</div>
+</body>
+</html>
