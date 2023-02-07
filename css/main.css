@@ -2,6 +2,8 @@ body {
     font-family: tahoma;
     color:#282828;
     margin: 0px;
+    width: 500px;
+
 }
 .product {
     display: flex;
@@ -144,17 +146,15 @@ body {
     padding: 15px;
     overflow: auto;
 }
-
-
-
 /*Цвет*/
 #app {
     list-style: none;
     background: #EEE3DB;
-    margin: 0;
     padding-left: 40px;
     border-radius: 5px;
     width: 500px;
+    margin-left: 100px;
+    margin-top: 100px;
 }
 #app a {
     text-decoration: none;
@@ -173,3 +173,6 @@ body {
     border-radius: 50%;
     background: #A58063;
 }
+
+
+

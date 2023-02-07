@@ -18,7 +18,6 @@ Vue.component('product-review', {
         return {
             review: null,
             errors: [],
-
         }
     },
     methods: {
@@ -26,16 +25,11 @@ Vue.component('product-review', {
             console.log(1)
             let productReview = {
                 review: this.review,
-
             }
             eventBus.$emit('review-submitted', productReview)
             this.review = null
-
-
         }
     }
-
-
 })
 Vue.component('product', {
     template: `
@@ -64,15 +58,16 @@ Vue.component('product', {
             this.reviews.push(productReview)
         })
     }
-
 })
 let app = new Vue({
     el: '#app',
     data: {
         cart: [],
-
     },
 })
+
+// https://learn.javascript.ru/event-delegation
+
 
 
 
