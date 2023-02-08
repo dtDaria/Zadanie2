@@ -96,6 +96,12 @@ let num = 0, submit = document.querySelector('[type=submit]');
 submit.onclick = function () {
     num++, num > 3 ? this.disabled = true : '';
 };
+let ap = new Vue({
+    el: '#ap',
+    data: {
+        cart: [],
+    },
+})
 
 
 
