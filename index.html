@@ -22,16 +22,32 @@
                 <div class="bl">
                 </div>
                 <div class="modal-body">
-                    <product-review></product-review>
+                    <div class="modal-body">
+                        <form class="review-form" @submit.prevent="onSubmit">
+                            </p>
+                            <p>
+                            <p>
+                                <label for="name">Название:</label>
+                                <input  name="name" id="name" v-model="popa.name" placeholder="name" value="Название">
+                            </p>
+                            <label for="review">Заметка:</label>
+                            <textarea  id="review"  v-model="popa.review" value="Заметка"></textarea>
+                            </p>
+                            <p>
+                                <input  type="submit" value="Сохранить">
+                            </p>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
     <product></product>
+    <product2></product2>
 
 </div >
-<div id="bll"></div>
-<div id="bl"></div>
+<div class="bl"></div>
 </body>
 </html>

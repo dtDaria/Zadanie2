@@ -174,7 +174,7 @@ body {
     border-radius: 50%;
     background: #A58063;
 }
-#bll{
+.bll{
     position: absolute;
     background: rgba(177, 218, 209, 0.84);
     border-radius: 5px;
@@ -183,7 +183,7 @@ body {
     height: 150px;
     margin-top: 100px;
 }
-#bl{
+.bl{
     position: absolute;
     background: rgba(175, 192, 227, 0.84);
     border-radius: 5px;
