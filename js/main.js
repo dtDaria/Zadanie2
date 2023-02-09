@@ -1,32 +1,33 @@
 let eventBus = new Vue()
+Vue.component('fiol',{
+
+})
+Vue.component('zel', {
+
+})
 Vue.component('product-review', {
     template: `
 <div class="modal-body">    
-        <form class="review-form" @submit.prevent="onSubmit"> 
-           <p v-if="errors.length">
-    <b>Введите всё правильно:</b>
-    <ul>
-        <li v-for="error in errors">{{ error }}</li>
-    </ul>
-</p>
+        <form class="review-form" @submit.prevent="onSubmit">     
 </p>
  <p>
   <p>
    <label for="name">Название:</label>
-   <input id="name" v-model="name" placeholder="name">
+   <input  name="name" id="name" v-model="name" placeholder="name" value="Название">  
  </p>
    <label for="review">Заметка:</label>
-   <textarea id="review" v-model="review"></textarea>
+   <textarea  id="review"  v-model="review" value="Заметка"></textarea>
  </p>
-
  <p>
-<input type="submit" value="Сохранить">
+<input  type="submit" value="Сохранить">
  </p>
 </form>
       </div>
  `,
     data() {
         return {
+            focused: false,
+            focused1: false,
             counter: 0,
             name:null,
             review: null,
@@ -35,7 +36,6 @@ Vue.component('product-review', {
     },
     methods: {
         onSubmit() {
-            this.errors = [] // очищение при исправлении ошибки
             if (this.name && this.review) {
                 let productReview = {
                     name: this.name,
@@ -44,11 +44,10 @@ Vue.component('product-review', {
                 eventBus.$emit('review-submitted', productReview)
                 this.name = null
                 this.review = null
-            }else {
-                if (!this.name) this.errors.push("Имя отсутствует")
-                if (!this.review) this.errors.push("Заметка отсутствует")
             }
-        }
+            const reviewTextarea = document.getElementById('review')
+            reviewTextarea.focus()
+        },
     }
 })
 Vue.component('product', {
@@ -56,8 +55,7 @@ Vue.component('product', {
    <div class="product">
         <div class="product-info">
             <div>
-            <h2>Чем хочешь поделиться?</h2>
-            
+            <h2>Чем хочешь поделиться?</h2>          
             <ul>
                 <li v-for="review in reviews">
                   <p>Название: {{ review.name }}</p>
@@ -65,12 +63,8 @@ Vue.component('product', {
                   </li>
             </ul>
             </div>   
-            
-        </div>
-        
+        </div> 
    </div>
-   
-   
  `,
     data() {
         return {
@@ -83,32 +77,10 @@ Vue.component('product', {
             this.reviews.push(productReview)
         })
     }
-
 })
 let app = new Vue({
     el: '#app',
     data: {
         cart: [],
     },
-
 })
-let num = 0, submit = document.querySelector('[type=submit]');
-submit.onclick = function () {
-    num++, num > 3 ? this.disabled = true : '';
-};
-let ap = new Vue({
-    el: '#ap',
-    data: {
-        cart: [],
-    },
-})
-
-
-
-
-
-
-
-
-
-
